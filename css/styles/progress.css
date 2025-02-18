@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #222;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  grid-gap: 40px;
+}
+
+.container .card {
+  position: relative;
+  width: 220px;
+  height: 250px;
+  background: #2a2a2a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.container .card .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.container .card .percent svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 3;
+  stroke: #191919;
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+}
+
+.container .card .percent svg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+  opacity: 0;
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    stroke: 0;
+    stroke-dasharray: 159;
+  }
+  100% {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    stroke: 0;
+    stroke-dasharray: 159;
+  }
+  100% {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    opacity: 1;
+  }
+}
+
+.container .card .percent .dot {
+  position: absolute;
+  z-index: 10;
+  inset: 5px;
+  -webkit-transform: rotate(calc(3.6deg * var(--num)));
+          transform: rotate(calc(3.6deg * var(--num)));
+  -webkit-animation: animateDot 1s linear forwards;
+          animation: animateDot 1s linear forwards;
+}
+
+@-webkit-keyframes animateDot {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(calc(3.6deg * var(--num)));
+            transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+@keyframes animateDot {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(calc(3.6deg * var(--num)));
+            transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.container .card .percent .dot::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  left: 50%;
+  background: var(--clr);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+          box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+
+.container .card .percent .number {
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .card .percent .number h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.container .card .percent .number h2 span {
+  font-weight: 300;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.container .card .percent .number p {
+  font-weight: 300;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+/*# sourceMappingURL=style.css.map */
